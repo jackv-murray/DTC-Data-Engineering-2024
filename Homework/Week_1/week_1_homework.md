@@ -47,7 +47,7 @@ SELECT MAX(trip_distance), DATE(lpep_pickup_datetime)
   WHERE DATE(lpep_pickup_datetime) IN (
                                        DATE('2019-09-18'),
                                        DATE('2019-09-16'),
-  									   DATE('2019-09-26'),
+                                       DATE('2019-09-26'),
                                        DATE('2019-09-21'))
  GROUP BY DATE(lpep_pickup_datetime)
 ```
