@@ -25,10 +25,12 @@ What is version of the package wheel ?
 How many taxi trips were totally made on September 18th 2019?
 
 **Answer: 15612**  
-```SELECT count(*)
+```
+SELECT count(*)
   FROM green_taxi_trips
   WHERE DATE(lpep_pickup_datetime) = DATE('2019-09-18')
-  AND DATE(lpep_dropoff_datetime) = DATE('2019-09-18') ```
+  AND DATE(lpep_dropoff_datetime) = DATE('2019-09-18')
+ ```
 
 ## Question 4
 Which was the pick up day with the largest trip distance Use the pick up time for your calculations.
