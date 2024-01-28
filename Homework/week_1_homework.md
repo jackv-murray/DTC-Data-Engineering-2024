@@ -111,6 +111,7 @@ provider "google" {
 ```
 
 Omitting the rest of the terraform code but the rest of my terraform file creates two resources: 
+
 **(1)** a google storage bucket, with name and location defined in the variable file. 
 
 **(2)** a google big query dataset, with its dataset_id and location defined in the variable file. 
