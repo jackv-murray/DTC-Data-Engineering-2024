@@ -92,25 +92,8 @@ For the passengers picked up in September 2019 in the zone name Astoria which wa
 ```
 
 ## Question 7
-```
-terraform {
-  required_providers {
-    google = {
-      source  = "hashicorp/google"
-      version = "5.13.0"
-    }
-  }
-}
 
-provider "google" {
-  credentials = file(var.credentials)
-  project     = var.project
-  region      = var.region
-}
-...
-```
-
-Omitting the rest of the terraform code but the rest of my terraform file creates two resources: 
+my main.tf and variables.tf files are located in the week 1 folder, and they create:
 
 **(1)** a google storage bucket, with name and location defined in the variable file. 
 
