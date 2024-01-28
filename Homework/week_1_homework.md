@@ -41,6 +41,7 @@ Which was the pick up day with the largest trip distance Use the pick up time fo
     2019-09-21
 
 **Answer: 2019-09-26**
+```
 SELECT MAX(trip_distance), DATE(lpep_pickup_datetime)
   FROM green_taxi_trips
   WHERE DATE(lpep_pickup_datetime) IN (
@@ -49,6 +50,7 @@ SELECT MAX(trip_distance), DATE(lpep_pickup_datetime)
   									   DATE('2019-09-26'),
                                        DATE('2019-09-21'))
  GROUP BY DATE(lpep_pickup_datetime)
+```
 
  ## Question 5 
 Consider lpep_pickup_datetime in '2019-09-18' and ignoring Borough has Unknown
@@ -56,6 +58,7 @@ Consider lpep_pickup_datetime in '2019-09-18' and ignoring Borough has Unknown
 Which were the 3 pick up Boroughs that had a sum of total_amount superior to 50000?
 
 **Answer: Brooklyn, Manhattan, Queens**
+ ```
  SELECT sum(total_amount), "Borough"
    FROM green_taxi_trips
    LEFT JOIN taxi_zone_lookup
@@ -64,11 +67,13 @@ Which were the 3 pick up Boroughs that had a sum of total_amount superior to 500
    GROUP BY "Borough"
    ORDER BY sum(total_amount) DESC
    ;
+```
 
 ## Question 6
 For the passengers picked up in September 2019 in the zone name Astoria which was the drop off zone that had the largest tip? We want the name of the zone, not the id.
 
 **Answer: JFK Airport**
+```
  WITH pickups AS (
  SELECT tip_amount, "Borough", "Zone", lpep_dropoff_datetime, "DOLocationID"
    FROM green_taxi_trips
@@ -84,10 +89,10 @@ For the passengers picked up in September 2019 in the zone name Astoria which wa
    FROM taxi_zone_lookup
    INNER JOIN pickups
    ON taxi_zone_lookup."LocationID" = pickups."DOLocationID" 
-
+```
 
 ## Question 7
-
+```
 terraform {
   required_providers {
     google = {
@@ -102,9 +107,12 @@ provider "google" {
   project     = var.project
   region      = var.region
 }
+...
+```
 
 Omitting the rest of the terraform code but the rest of my terraform file creates two resources: 
-(1) a google storage bucket, with name and location defined in the variable file. 
-(2) a google big query dataset, with its dataset_id and location defined in the variable file. 
+**(1)** a google storage bucket, with name and location defined in the variable file. 
+
+**(2)** a google big query dataset, with its dataset_id and location defined in the variable file. 
 
 The output is included in the homework submission form. 
