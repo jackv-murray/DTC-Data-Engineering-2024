@@ -1,5 +1,9 @@
 **all of the mage blocks I created are located in the folder and were used to answer the following questions**
 
+**my pipeline is scheduled as:**
+
+![alt text](https://github.com/jackv-murray/DTC-Data-Engineering-2024/blob/main/Homework/Week_2/trigger_small.png)
+
 ## Question 1
 Once the dataset is loaded, what's the shape of the data?
 ```
