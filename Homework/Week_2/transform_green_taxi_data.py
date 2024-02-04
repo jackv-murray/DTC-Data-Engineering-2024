@@ -29,8 +29,6 @@ def test_output(output, *args) -> None:
     """
     Template code for testing the output of the block.
     """
-    # assert output[output['passenger_count'] > 0]
-    # assert output[output['trip_distance']  > 0]
     assert output['vendor_id'] is not None, 'vendor_id is not present'
     assert output['passenger_count'].isin([0]).sum() == 0, 'There are rides with zero passengers'
     assert output['trip_distance'].isin([0]).sum() == 0, 'There are rides with zero trip distance'
