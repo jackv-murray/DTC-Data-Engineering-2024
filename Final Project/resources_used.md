@@ -5,6 +5,8 @@
 
 **Last.fm API documentation**
 
+my profile: https://www.last.fm/user/sorfildor
+
 https://www.last.fm/api
 
 https://www.last.fm/api/intro
