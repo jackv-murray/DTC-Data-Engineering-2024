@@ -19,7 +19,7 @@ SELECT
 	MAX(duration) AS max,
 	concat(pickup_zone, '-', dropoff_zone) AS zone_pair
    FROM dt
-   GROUP BY pickup_zone, dropoff_zone 
+   GROUP BY concat(pickup_zone, '-', dropoff_zone)
 ) "
 ```
 
@@ -45,7 +45,7 @@ SELECT
 	COUNT(*) AS trips, --simply add a further aggregation?
 	concat(pickup_zone, '-', dropoff_zone) AS zone_pair
    FROM dt
-   GROUP BY pickup_zone, dropoff_zone 
+   GROUP BY concat(pickup_zone, '-', dropoff_zone) 
    ORDER BY 1 DESC
    LIMIT 15;
 )
